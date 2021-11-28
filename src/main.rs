@@ -64,8 +64,9 @@ fn main() {
     // Print 3rd element:
     println!("The 3rd prime is: {}", an_array[2]); //Indices start with 0
     
-    //Note that arrays are by default immutable (like everythins else in Rust :) 
-    //an_array[1] = 13; => would raise a compilation error.
+    // Note that arrays are by default immutable (like everythins else in Rust :) 
+    // Note also that arrays in Rust are of FIXED size
+    // an_array[1] = 13; => would raise a compilation error. 
     let mut an_array = [1, 2, 3, 5, 7, 11];
     an_array[1] = 13; // Replace second element with 13
     println!("{:?}", an_array);
@@ -74,6 +75,9 @@ fn main() {
     let a_part = &an_array[1..3];
     println!("{:?}", a_part);
 
+    
+    // When illegal access if possible o detect, like here, the compilation will fail:
+    // println!("{:?}", an_array[7]);
 
 }
 
